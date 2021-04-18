@@ -1,0 +1,89 @@
+﻿@model IEnumerable<SahibindenBitirmeProjesi.Entity.Entities.Concrete.Models>
+
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>List</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fuel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gear)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HorsePower)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Color)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageUpload)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnitPrice)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+		<tr>
+
+			<td>
+				@Html.DisplayFor(modelItem => item.Name)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Year)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Fuel)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Gear)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.HorsePower)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Color)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Description)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.ImageUpload)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.UnitPrice)
+			</td>
+
+			<td>
+				<a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+			</td>
+			<td>
+				<a asp-action="Remove" asp-route-id="@item.Id" class="btn btn-danger confirmDeletion">Remove</a>
+			</td>
+		</tr>
+}
+    </tbody>
+</table>

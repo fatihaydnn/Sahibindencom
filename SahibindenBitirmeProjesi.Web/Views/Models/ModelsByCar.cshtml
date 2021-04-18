@@ -1,0 +1,28 @@
+﻿@model IEnumerable<SahibindenBitirmeProjesi.Entity.Entities.Concrete.Models>
+@{
+    ViewData["Title"] = "ModelsByCar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>ModelsByCar</h1>
+
+<div class="row">
+	@foreach (var item in Model)
+	{
+		<div class="col-4">
+			<div class="card">
+				<div class="card-header">
+					<img src="~/media/models/@item.Image" class="card-img-top" />
+				</div>
+				<div class="card-body">
+					<p class="card-title">@item.Name</p>
+					<p class="card-text">@item.Description</p>
+					<p class="card-text">@item.UnitPrice.ToString("C2")</p>
+				</div>
+				<div class="card-footer">
+					<a asp-controller="Cart" asp-action="Add" class="btn btn-block btn-dark" asp-route-id="@item.Id">Add To Cart</a>
+				</div>
+			</div>
+		</div>
+	}
+</div>

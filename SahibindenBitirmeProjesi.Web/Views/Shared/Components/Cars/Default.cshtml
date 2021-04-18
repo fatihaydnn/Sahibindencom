@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Cars>
+
+
+<ul class="list-group">
+
+	<li class="list-group-item">
+		<a asp-area="Admin" asp-controller="Cars" asp-action="Create" class="nav-link text-dark">Araba Markası Ekle</a>
+	</li>
+
+	<li class="list-group-item">
+		<a asp-area="Admin" asp-controller="Model" asp-action="Create" class="nav-link text-dark">Araba Modeli Ekle</a>
+	</li>
+
+	<li class="list-group-item">
+		<a asp-area="Admin" asp-controller="Page" asp-action="List" class="nav-link text-dark">Sayfa Düzenleme</a>
+	</li>
+
+	<li class="list-group-item">
+		<a asp-area="Admin" asp-controller="User" asp-action="Index" class="nav-link text-dark">Kullanıcılar</a>
+	</li>
+
+	<li class="list-group-item">
+		<a asp-area="Admin" asp-controller="Role" asp-action="Index" class="nav-link text-dark">Role Düzenleme</a>
+	</li>
+
+	<li class="list-group-item">
+		<a asp-controller="Models" asp-action="Index" class="nav-link text-dark">Tüm Modeller</a>
+	</li>
+
+
+	@foreach (var item in Model)
+		{
+			<li class="list-group-item">
+				<a class="nav-link text-dark" asp-area="" asp-controller="Models" asp-action="ModelsByCar" asp-route-id="@item.Id">@item.Name</a>
+			</li>
+		}
+
+</ul>
+
+@*<div class="btn-group dropend">
+	<button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Araçlar</button>
+	<ul class="dropdown-menu">
+		@foreach (var item in Model)
+		{
+			<li><a class="dropdown-item" asp-controller="Models" asp-action="ModelsByCar" asp-route-id="@item.Id">@item.Name</a></li>
+		}
+	</ul>
+	
+</div>*@

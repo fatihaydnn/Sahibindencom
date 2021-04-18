@@ -1,0 +1,28 @@
+﻿@model IEnumerable<SahibindenBitirmeProjesi.Entity.Entities.Concrete.Models>
+@{
+	ViewData["Title"] = "Index";
+	//Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="display-4 pb-5">All Product</h1>
+
+<div class="row">
+	@foreach (var item in Model)
+	{
+		<div class="col-4">
+			
+				<div class="form-group">
+					<img src="~/media/models/@item.Image" class="card-img-top" />
+				</div>
+				<div class="form-group">
+					<p class="card-title">@item.Name</p>
+					<p class="card-text">@item.Description</p>
+					<p class="card-text">@item.UnitPrice.ToString("C2")</p>
+				</div>
+				<div class="form-group">
+					<a asp-controller="Cart" asp-action="Add" class="btn btn-block btn-dark" asp-route-id="@item.Id">Add To Cart</a>
+				</div>
+			
+		</div>
+	}
+</div>

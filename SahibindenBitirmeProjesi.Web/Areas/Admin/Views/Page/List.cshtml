@@ -1,0 +1,61 @@
+﻿@model IEnumerable<SahibindenBitirmeProjesi.Entity.Entities.Concrete.Page>
+
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>List</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div class="row mt-2">
+	<div class="col-sm-12">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>
+						@Html.DisplayNameFor(model => model.Id)
+					</th>
+					<th>
+						@Html.DisplayNameFor(model => model.Title)
+					</th>
+
+					<th>
+						@Html.DisplayNameFor(model => model.Content)
+					</th>
+
+					<th>
+
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var item in Model)
+				{
+				<tr>
+					<td>
+						@Html.DisplayFor(modelItem => item.Id)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Title)
+					</td>
+
+					<td>
+						@Html.DisplayFor(modelItem => item.Content)
+					</td>
+
+					<td>
+						<a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+					</td>
+					<td>
+						<a asp-action="Remove" asp-route-id="@item.Id" class="btn btn-danger confirmDeletion">Remove</a>
+					</td>
+				</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+</div>
+

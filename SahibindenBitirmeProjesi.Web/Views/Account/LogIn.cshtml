@@ -1,0 +1,82 @@
+﻿@model SahibindenBitirmeProjesi.Web.Models.Dtos.Login
+
+@{
+	ViewData["Title"] = "LogIn";
+
+}
+
+<h1>LogIn</h1>
+
+<hr />
+<div class="row">
+	<div class="col-md-4">
+		<form asp-action="LogIn">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+			<input type="hidden" asp-for="ReturnUrl" />
+
+			<div class="form-group">
+				<label asp-for="UserName" class="control-label"></label>
+				<input asp-for="UserName" class="form-control" />
+				<span asp-validation-for="UserName" class="text-danger"></span>
+			</div>
+
+			<div class="form-group">
+				<label asp-for="Password" class="control-label"></label>
+				<input asp-for="Password" class="form-control" />
+				<span asp-validation-for="Password" class="text-danger"></span>
+			</div>
+
+			<div class="form-group">
+				<input type="submit" value="Log In" class="btn btn-primary" />
+			</div>
+
+			<div class="form-group">
+				<a asp-action="Register" class="btn btn-block btn-dark">Sign Up</a>
+			</div>
+
+		</form>
+	</div>
+</div>
+
+
+
+@section Scripts {
+	@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+
+@*<h1>Sign In</h1>
+
+<hr />
+<div class="row">
+	<div class="col-md-4">
+		<form asp-action="LogIn">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+			<input type="hidden" asp-for="ReturnUrl" />
+
+			<div class="form-group">
+				<label asp-for="UserName" class="control-label"></label>
+				<input asp-for="UserName" class="form-control" />
+				<span asp-validation-for="UserName" class="text-danger"></span>
+			</div>
+
+			<div class="form-group">
+				<label asp-for="Password" class="control-label"></label>
+				<input asp-for="Password" class="form-control" />
+				<span asp-validation-for="Password" class="text-danger"></span>
+			</div>
+
+			<div class="form-group float-right">
+				<input type="submit" value="Log In" class="btn btn-primary" />
+			</div>
+
+		</form>
+		<div>
+			<button type="button" class="btn btn-dark">Back to Sign In</button>
+		</div>
+	</div>
+
+</div>*@

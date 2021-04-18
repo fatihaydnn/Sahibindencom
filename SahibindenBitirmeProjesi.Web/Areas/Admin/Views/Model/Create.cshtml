@@ -1,0 +1,97 @@
+﻿@model SahibindenBitirmeProjesi.Entity.Entities.Concrete.Models
+
+@{
+    ViewData["Title"] = "Create";
+    
+}
+
+<h1>Create</h1>
+
+<h4>Models</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+		<div class="card-body">
+			<form asp-action="Create" enctype="multipart/form-data">
+				<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+				<div class="form-group">
+					<label asp-for="Name" class="control-label"></label>
+					<input asp-for="Name" class="form-control" />
+					<span asp-validation-for="Name" class="text-danger"></span>
+				</div>
+
+				<div class="form-group">
+					<label asp-for="Year" class="control-label"></label>
+					<input asp-for="Year" class="form-control" />
+					<span asp-validation-for="Year" class="text-danger"></span>
+				</div>
+
+				<div class="form-group">
+					<label asp-for="Fuel" class="control-label"></label>
+					<input asp-for="Fuel" class="form-control" />
+					<span asp-validation-for="Fuel" class="text-danger"></span>
+				</div>
+
+				<div class="form-group">
+					<label asp-for="Gear" class="control-label"></label>
+					<input asp-for="Gear" class="form-control" />
+					<span asp-validation-for="Gear" class="text-danger"></span>
+				</div>
+
+				<div class="form-group">
+					<label asp-for="HorsePower" class="control-label"></label>
+					<input asp-for="HorsePower" class="form-control" />
+					<span asp-validation-for="HorsePower" class="text-danger"></span>
+				</div>
+
+				<div class="form-group">
+					<label asp-for="Color" class="control-label"></label>
+					<input asp-for="Color" class="form-control" />
+					<span asp-validation-for="Color" class="text-danger"></span>
+				</div>
+
+				<div class="form-group">
+					<label asp-for="Description" class="control-label"></label>
+					<input asp-for="Description" class="form-control" />
+					<span asp-validation-for="Description" class="text-danger"></span>
+				</div>
+
+				<div class="form-group">
+					<label asp-for="UnitPrice" class="control-label"></label>
+					<input asp-for="UnitPrice" class="form-control" />
+					<span asp-validation-for="UnitPrice" class="text-danger"></span>
+				</div>
+
+				<div class="form-group">
+					<label asp-for="CarsId" class="control-label"></label>
+					<select asp-for="CarsId" asp-items="@ViewBag.CarId" class="form-control">
+						<option value="0">Araç Seçiniz</option>
+					</select>
+					<span asp-validation-for="CarsId" class="text-danger"></span>
+				</div>
+
+				<div class="form-group">
+					<label asp-for="ImageUpload" class="control-label"></label>
+					<input asp-for="ImageUpload" class="form-control" />
+					<span asp-validation-for="ImageUpload" class="text-danger"></span>
+				</div>
+
+
+				<div class="form-group float-right">
+					<input type="submit" value="Create" class="btn btn-primary" />
+				</div>
+
+				<div class="float-left">
+					<a asp-action="List" class="btn btn-dark">Back to List</a>
+				</div>
+			</form>
+		</div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
